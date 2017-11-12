@@ -4,13 +4,33 @@ using UnityEngine;
 
 public class MenuManager2 : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public GameObject Ages;
+    public GameObject Subjects;
+    void Start()
+    {
+        Subjects.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public void showSubjects()
+    {
+        StartCoroutine("moveAges");
+        //Ages.transform.Translate(new Vector3(-280, 0, 0));
+        //Subjects.SetActive(true);
+    }
+
+    IEnumerator moveAges()
+    {
+        while(Ages.transform.localPosition.x > -310)
+        {
+            Ages.transform.Translate(new Vector3(-10, 0, 0));
+            yield return new WaitForFixedUpdate();
+        }
+        Subjects.SetActive(true);
+        yield return null;
+    }
 }
