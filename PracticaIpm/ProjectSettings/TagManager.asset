@@ -7,6 +7,7 @@ TagManager:
   - Ardilla
   - Edades
   - Asignaturas
+  - Tile
   layers:
   - Default
   - TransparentFX
