@@ -7,7 +7,10 @@ public class TileMapping : MonoBehaviour {
     List<GameObject> Tiles;
     Animator anim;
     int index = 0;
+	int ejer;
     bool moving = false;
+	public int pasos;
+
     // Use this for initialization
     void Start () {
         Tiles = (from tile in GameObject.FindGameObjectsWithTag("Tile")
@@ -24,6 +27,7 @@ public class TileMapping : MonoBehaviour {
             if (!moving)
             {
                 index++;
+				pasos++;
                 StartCoroutine("move");
             }
         }
@@ -32,8 +36,49 @@ public class TileMapping : MonoBehaviour {
 			if (!moving)
 			{
 				index--;
+				pasos--;
 				StartCoroutine("moveback");
 			}
+		}
+	}
+
+	public void Avanzar(){
+		if (!moving)
+		{
+			index++;
+			pasos++;
+			StartCoroutine("move");
+		}
+	}
+
+	public void Retroceder(){
+		if (!moving) {
+			index--;
+			pasos--;
+			StartCoroutine ("moveback");
+		}
+	}
+	public void Reintentar(int ejemplo){
+		switch (ejemplo) {
+		case 0:
+			ejer = 0;
+			doCoroutine ();
+			break;
+		case 1:
+			
+			break;
+		case 2:
+			
+			break;
+		}
+	}
+
+	IEnumerator doCoroutine(){
+		if (index <=ejer)
+			yield return null;
+		while (moving == false) {
+			StartCoroutine ("moveback");
+			yield return new WaitForFixedUpdate();
 		}
 	}
 
