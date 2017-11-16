@@ -17,9 +17,11 @@ public class Suma : MonoBehaviour {
 	public GameObject nueve;
 	public GameObject canvas;
 	public GameObject suma;
+	GameObject sum1;
+	GameObject sum2;
 	GameObject elefante;
 	TileMapping script;
-	int indice =0;
+	int indice;
 	// Use this for initialization
 	void Start () {
 		elefante = GameObject.Find("ElefantePadre");
@@ -27,49 +29,46 @@ public class Suma : MonoBehaviour {
 		Sumauno ();
 	}
 	void Sumauno(){
-		GameObject sum1 = Instantiate (dos) as GameObject;
-		sum1.transform.position = new Vector3 (-7, 1, 0);
-		GameObject sum2 = Instantiate (tres) as GameObject;
-		sum2.transform.position = new Vector3 (-5, 1, 0);
+		sum1 = Instantiate (dos) as GameObject;
+		sum1.transform.position = new Vector3 (-7, 4, 0);
+		sum2 = Instantiate (tres) as GameObject;
+		sum2.transform.position = new Vector3 (-5, 4, 0);
 		GameObject sum = Instantiate (suma) as GameObject;
-		sum.transform.position = new Vector3 (-6, 1, 0);
+		sum.transform.position = new Vector3 (-6, 4, 0);
 		sum1.transform.parent = canvas.transform;
 		sum2.transform.parent = canvas.transform;
 		sum.transform.parent = canvas.transform;
 		sum1.transform.localScale = new  Vector3 (1, 1, 1);
 		sum2.transform.localScale = new  Vector3 (1, 1, 1);
 		sum.transform.localScale = new  Vector3 (1, 1, 1);
-
+		indice = 0;
 	}
 	void Sumados(){
-		GameObject sum1 = Instantiate (cuatro) as GameObject;
-		sum1.transform.position = new Vector3 (-7, 1, 0);
-		GameObject sum2 = Instantiate (seis) as GameObject;
-		sum2.transform.position = new Vector3 (-5, 1, 0);
-		GameObject sum = Instantiate (suma) as GameObject;
-		sum.transform.position = new Vector3 (-6, 1, 0);
+		Destroy (sum1);
+		Destroy (sum2);
+		sum1 = Instantiate (cuatro) as GameObject;
+		sum1.transform.position = new Vector3 (-7, 4, 0);
+		sum2 = Instantiate (seis) as GameObject;
+		sum2.transform.position = new Vector3 (-5, 4, 0);
 		sum1.transform.parent = canvas.transform;
 		sum2.transform.parent = canvas.transform;
-		sum.transform.parent = canvas.transform;
 		sum1.transform.localScale = new  Vector3 (1, 1, 1);
 		sum2.transform.localScale = new  Vector3 (1, 1, 1);
-		sum.transform.localScale = new  Vector3 (1, 1, 1);
+		indice = 1;
 
 	}
 	void Sumatres(){
-		GameObject sum1 = Instantiate (dos) as GameObject;
-		sum1.transform.position = new Vector3 (-7, 1, 0);
-		GameObject sum2 = Instantiate (cuatro) as GameObject;
-		sum2.transform.position = new Vector3 (-5, 1, 0);
-		GameObject sum = Instantiate (suma) as GameObject;
-		sum.transform.position = new Vector3 (-6, 1, 0);
+		Destroy (sum1);
+		Destroy (sum2);
+		sum1 = Instantiate (dos) as GameObject;
+		sum1.transform.position = new Vector3 (-7, 4, 0);
+		sum2 = Instantiate (cuatro) as GameObject;
+		sum2.transform.position = new Vector3 (-5, 4, 0);
 		sum1.transform.parent = canvas.transform;
 		sum2.transform.parent = canvas.transform;
-		sum.transform.parent = canvas.transform;
 		sum1.transform.localScale = new  Vector3 (1, 1, 1);
 		sum2.transform.localScale = new  Vector3 (1, 1, 1);
-		sum.transform.localScale = new  Vector3 (1, 1, 1);
-
+		indice = 2;
 	}
 	public void ComprobarSuma(){
 		int pasos = script.pasos;
@@ -93,7 +92,7 @@ public class Suma : MonoBehaviour {
 			break;
 		case 2:
 			if (pasos == 6) {
-				Sumados ();
+				//Llamar a acabar
 				script.pasos = 0;
 			} else {
 				script.Reintentar ();
