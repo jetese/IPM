@@ -8,6 +8,7 @@ public class MenuManager1 : MonoBehaviour {
     public bool isAutomatic = false;
     public bool goBack = false;
     public string nextScene;
+    public List<AudioClip> CloseGameAudio;
 
     private void Awake()
     {
@@ -54,5 +55,15 @@ public class MenuManager1 : MonoBehaviour {
         prevScene = nextScene;
         nextScene = scene;
         goToNextScene();
+    }
+
+    public void EndGame()
+    {
+        print("Adios");
+        GameObject ardilla = GameObject.FindGameObjectWithTag("Ardilla");
+        System.Random rnd = new System.Random();
+        int randomIndex = rnd.Next(CloseGameAudio.Count);
+        ardilla.GetComponent<MenuAsignaturas>().playAudio(CloseGameAudio[randomIndex]);
+        Application.Quit();
     }
 }

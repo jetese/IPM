@@ -1155,6 +1155,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 035d38cd5ed69314cb51e8c8bb75361f, type: 3}
   - {fileID: 8300000, guid: 06404de22e513f24eb8d17f2603baa27, type: 3}
   - {fileID: 8300000, guid: 6fa7225d43b7e8449a43b2b999c218da, type: 3}
+  Hints:
+  - {fileID: 8300000, guid: 52da4bd76a6c4414797ab3fb3244b54e, type: 3}
+  - {fileID: 8300000, guid: c517b3d797fd5eb4588384398b533e02, type: 3}
   numeros:
   - {fileID: 1502627369445442, guid: f4ceb801138caf5418433f99d3742f89, type: 2}
   - {fileID: 1553798101855644, guid: 3d35ba2bc91981b488b6de679ab07cc5, type: 2}

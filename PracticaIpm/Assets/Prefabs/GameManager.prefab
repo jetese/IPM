@@ -52,6 +52,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prevScene: 
-  isAutomatic: 0
+  isAutomatic: 1
   goBack: 0
   nextScene: Menu2
+  CloseGameAudio:
+  - {fileID: 8300000, guid: f02e6252578b4e94fb823d4311a1c062, type: 3}
+  - {fileID: 8300000, guid: 16e0d2dd8795cb747a85fa545a080a17, type: 3}
+  - {fileID: 8300000, guid: ed467d2a8a4b45a43b7c2aba8f682477, type: 3}
