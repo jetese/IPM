@@ -1155,20 +1155,21 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 035d38cd5ed69314cb51e8c8bb75361f, type: 3}
   - {fileID: 8300000, guid: 06404de22e513f24eb8d17f2603baa27, type: 3}
   - {fileID: 8300000, guid: 6fa7225d43b7e8449a43b2b999c218da, type: 3}
+  numeros:
+  - {fileID: 1502627369445442, guid: f4ceb801138caf5418433f99d3742f89, type: 2}
+  - {fileID: 1553798101855644, guid: 3d35ba2bc91981b488b6de679ab07cc5, type: 2}
+  - {fileID: 1698983090796596, guid: ea4ee5bb34ca3e546a0c0f2521deb25e, type: 2}
+  - {fileID: 1649754309961306, guid: 80056d01643928142b83875bc64ce613, type: 2}
+  - {fileID: 1316322061247738, guid: c11641ce3529c3a4db863978fe5b2912, type: 2}
+  - {fileID: 1785294798931584, guid: ae1407815f051fa4ea2958da67a5db3d, type: 2}
+  - {fileID: 1302260541208280, guid: 381614bf01833c844a17b3ca95f1b14f, type: 2}
+  - {fileID: 1596391847040830, guid: a39ecb8108d36da4783c4db20fb22705, type: 2}
+  - {fileID: 1133710227493424, guid: 45d870dfb448d9141884ab71e92b8b5d, type: 2}
+  - {fileID: 1732085399348044, guid: 3169df63bbb6b9a40a17777848e43139, type: 2}
   Instruction: {fileID: 8300000, guid: 0b9c2b535a48d3d418cee2dd6a1b193a, type: 3}
   particleSystem: {fileID: 1071993872144046, guid: 2812397b40f3b38419eab2abe1254b27,
     type: 2}
   Erizo: {fileID: 162328250}
-  cero: {fileID: 1502627369445442, guid: f4ceb801138caf5418433f99d3742f89, type: 2}
-  uno: {fileID: 1553798101855644, guid: 3d35ba2bc91981b488b6de679ab07cc5, type: 2}
-  dos: {fileID: 1698983090796596, guid: ea4ee5bb34ca3e546a0c0f2521deb25e, type: 2}
-  tres: {fileID: 1649754309961306, guid: 80056d01643928142b83875bc64ce613, type: 2}
-  cuatro: {fileID: 1316322061247738, guid: c11641ce3529c3a4db863978fe5b2912, type: 2}
-  cinco: {fileID: 1785294798931584, guid: ae1407815f051fa4ea2958da67a5db3d, type: 2}
-  seis: {fileID: 1302260541208280, guid: 381614bf01833c844a17b3ca95f1b14f, type: 2}
-  siete: {fileID: 1596391847040830, guid: a39ecb8108d36da4783c4db20fb22705, type: 2}
-  ocho: {fileID: 1133710227493424, guid: 45d870dfb448d9141884ab71e92b8b5d, type: 2}
-  nueve: {fileID: 1732085399348044, guid: 3169df63bbb6b9a40a17777848e43139, type: 2}
   canvas: {fileID: 425179240}
   suma: {fileID: 1187204347328324, guid: de12ac1fef2ac774cbc6059f6b1b0ad3, type: 2}
 --- !u!4 &867038635
