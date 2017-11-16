@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Suma : MonoBehaviour {
+    public List<AudioClip> GoodAudios;
+    public GameObject Erizo;
 	public GameObject cero;
 	public GameObject uno;
 	public GameObject dos;
@@ -74,6 +76,7 @@ public class Suma : MonoBehaviour {
 		switch (indice) {
 		case 0:
 			if (pasos == 5) {
+                playAudioFromList(GoodAudios);
 				Sumados ();
 				script.pasos = 0;
 			} else {
@@ -102,4 +105,13 @@ public class Suma : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void playAudioFromList(List<AudioClip> audioList)
+    {
+        MenuAsignaturas audioPlayer = Erizo.GetComponent<MenuAsignaturas>();
+        System.Random rnd = new System.Random();
+        int randomIndex = rnd.Next(audioList.Count);
+
+        audioPlayer.playAudio(audioList[randomIndex]);
+    }
 }
