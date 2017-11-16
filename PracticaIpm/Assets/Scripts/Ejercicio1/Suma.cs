@@ -69,7 +69,7 @@ public class Suma : MonoBehaviour {
 		sum.transform.localScale = new  Vector3 (1, 1, 1);
 
 	}
-	void ComprobarSuma(){
+	public void ComprobarSuma(){
 		int pasos = script.pasos;
 		switch (indice) {
 		case 0:
@@ -77,7 +77,7 @@ public class Suma : MonoBehaviour {
 				Sumados ();
 				script.pasos = 0;
 			} else {
-				script.Reintentar (0);
+				script.Reintentar ();
 			}
 			break;
 		case 1:
@@ -85,7 +85,7 @@ public class Suma : MonoBehaviour {
 				Sumatres ();
 				script.pasos = 0;
 			} else {
-				script.Reintentar (1);
+				script.Reintentar ();
 			}
 			break;
 		case 2:
@@ -93,7 +93,7 @@ public class Suma : MonoBehaviour {
 				Sumados ();
 				script.pasos = 0;
 			} else {
-				script.Reintentar (2);
+				script.Reintentar ();
 			}
 			break;
 		}
