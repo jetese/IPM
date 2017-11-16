@@ -24,7 +24,7 @@ public class TileMapping : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!moving)
+            if (!moving && index<Tiles.Count-1)
             {
                 index++;
 				pasos++;
@@ -33,7 +33,7 @@ public class TileMapping : MonoBehaviour {
         }
 		if (Input.GetKeyDown(KeyCode.A))
 		{
-			if (!moving)
+			if (!moving && index>0)
 			{
 				index--;
 				pasos--;
