@@ -515,11 +515,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4904792416787452, guid: eea4c8476fc697c4f8015f7233a09730,
     type: 2}
   m_PrefabInternal: {fileID: 667375118}
---- !u!1 &674832690 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1486090885908708, guid: 40ab094380b5fc6488e5fbe73050339a,
-    type: 2}
-  m_PrefabInternal: {fileID: 836171128}
 --- !u!114 &674832691 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114607331511819318, guid: 40ab094380b5fc6488e5fbe73050339a,
@@ -1381,7 +1376,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 674832692}
+      - m_Target: {fileID: 674832691}
         m_MethodName: Retroceder
         m_Mode: 1
         m_Arguments:

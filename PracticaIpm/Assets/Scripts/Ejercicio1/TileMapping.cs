@@ -10,6 +10,7 @@ public class TileMapping : MonoBehaviour {
 	int ejer;
     bool moving = false;
 	public int pasos;
+    bool movingBack = false;
 
     // Use this for initialization
     void Start () {
@@ -26,8 +27,6 @@ public class TileMapping : MonoBehaviour {
         {
             if (!moving && index<Tiles.Count-1)
             {
-                index++;
-				pasos++;
                 StartCoroutine("move");
             }
         }
@@ -35,9 +34,7 @@ public class TileMapping : MonoBehaviour {
 		{
 			if (!moving && index>0)
 			{
-				index--;
-				pasos--;
-				StartCoroutine("moveback");
+				StartCoroutine("moveback", 1);
 			}
 		}
 	}
@@ -46,45 +43,30 @@ public class TileMapping : MonoBehaviour {
 	public void Avanzar(){
 		if (!moving && index<Tiles.Count-1)
 		{
-			index++;
-			pasos++;
 			StartCoroutine("move");
 		}
 	}
 
 	public void Retroceder(){
 		if (!moving && index>0) {
-			index--;
-			pasos--;
-			StartCoroutine ("moveback");
+			StartCoroutine ("moveback", 1);
 		}
 	}
-	public void Reintentar(int ejemplo){
-		switch (ejemplo) {
-		case 0:
-			ejer = 0;
-			doCoroutine ();
-			break;
-		case 1:
-			
-			break;
-		case 2:
-			
-			break;
-		}
-	}
+	public void Reintentar(){
+        if (!moving && index > 0)
+        {
+            StartCoroutine("moveback", pasos);
+        }
+    }
+    
 
-	IEnumerator doCoroutine(){
-		if (index <=ejer)
-			yield return null;
-		while (moving == false) {
-			StartCoroutine ("moveback");
-			yield return new WaitForFixedUpdate();
-		}
-	}
+
 
     IEnumerator move()
     {
+
+        index++;
+        pasos++;
         moving = true;
         anim.SetBool("Walking", true);
 
@@ -117,39 +99,47 @@ public class TileMapping : MonoBehaviour {
         yield return null;
     }
 
-	IEnumerator moveback()
+	IEnumerator moveback(int iterations = 1)
 	{
-		moving = true;
-		anim.SetBool("Walking", true);
+        while (iterations > 0)
+        {
+            index--;
+            pasos--;
+            moving = true;
+            movingBack = true;
+            anim.SetBool("Walking", true);
 
-		if (transform.localPosition.x >= Tiles[index].transform.position.x)
-		{
-			while (transform.localPosition.x >= Tiles[index].transform.position.x)
-			{
-				transform.Translate(new Vector3(-0.05f, 0, 0));
-				yield return new WaitForFixedUpdate();
+            if (transform.localPosition.x >= Tiles[index].transform.position.x)
+            {
+                while (transform.localPosition.x >= Tiles[index].transform.position.x)
+                {
+                    transform.Translate(new Vector3(-0.05f, 0, 0));
+                    yield return new WaitForFixedUpdate();
 
-			}
-		}
-		if (transform.localPosition.y >= Tiles[index].transform.position.y)
-		{
-			while (transform.localPosition.y >= Tiles[index].transform.position.y)
-			{
-				transform.Translate(new Vector3(0, -0.05f, 0));
-				yield return new WaitForFixedUpdate();
-			}
-		}
-		if (transform.localPosition.y <= Tiles[index].transform.position.y)
-		{
-			while (transform.localPosition.y <= Tiles[index].transform.position.y)
-			{
-				transform.Translate(new Vector3(0, +0.05f, 0));
-				yield return new WaitForFixedUpdate();
-			}
-		}
+                }
+            }
+            if (transform.localPosition.y >= Tiles[index].transform.position.y)
+            {
+                while (transform.localPosition.y >= Tiles[index].transform.position.y)
+                {
+                    transform.Translate(new Vector3(0, -0.05f, 0));
+                    yield return new WaitForFixedUpdate();
+                }
+            }
+            if (transform.localPosition.y <= Tiles[index].transform.position.y)
+            {
+                while (transform.localPosition.y <= Tiles[index].transform.position.y)
+                {
+                    transform.Translate(new Vector3(0, +0.05f, 0));
+                    yield return new WaitForFixedUpdate();
+                }
+            }
 
-		moving = false;
-		anim.SetBool("Walking", false);
+            moving = false;
+            anim.SetBool("Walking", false);
+            movingBack = false;
+            iterations--;
+        }
 		yield return null;
 	}
 
