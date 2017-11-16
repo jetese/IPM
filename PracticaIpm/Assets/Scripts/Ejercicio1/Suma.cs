@@ -45,17 +45,13 @@ public class Suma : MonoBehaviour {
 		Destroy (sum1);
 		Destroy (sum2);
 		sum1 = Instantiate (cuatro) as GameObject;
-		sum1.transform.position = new Vector3 (-7, 5, 0);
+		sum1.transform.position = new Vector3 (-7, 4, 0);
 		sum2 = Instantiate (seis) as GameObject;
-		sum2.transform.position = new Vector3 (-5, 5, 0);
-		GameObject sum = Instantiate (suma) as GameObject;
-		sum.transform.position = new Vector3 (-6, 5, 0);
+		sum2.transform.position = new Vector3 (-5, 4, 0);
 		sum1.transform.parent = canvas.transform;
 		sum2.transform.parent = canvas.transform;
-		sum.transform.parent = canvas.transform;
 		sum1.transform.localScale = new  Vector3 (1, 1, 1);
 		sum2.transform.localScale = new  Vector3 (1, 1, 1);
-		sum.transform.localScale = new  Vector3 (1, 1, 1);
 		indice = 1;
 
 	}
@@ -63,17 +59,13 @@ public class Suma : MonoBehaviour {
 		Destroy (sum1);
 		Destroy (sum2);
 		sum1 = Instantiate (dos) as GameObject;
-		sum1.transform.position = new Vector3 (-7, 5, 0);
+		sum1.transform.position = new Vector3 (-7, 4, 0);
 		sum2 = Instantiate (cuatro) as GameObject;
-		sum2.transform.position = new Vector3 (-5, 5, 0);
-		GameObject sum = Instantiate (suma) as GameObject;
-		sum.transform.position = new Vector3 (-6, 5, 0);
+		sum2.transform.position = new Vector3 (-5, 4, 0);
 		sum1.transform.parent = canvas.transform;
 		sum2.transform.parent = canvas.transform;
-		sum.transform.parent = canvas.transform;
 		sum1.transform.localScale = new  Vector3 (1, 1, 1);
 		sum2.transform.localScale = new  Vector3 (1, 1, 1);
-		sum.transform.localScale = new  Vector3 (1, 1, 1);
 		indice = 2;
 	}
 	public void ComprobarSuma(){
