@@ -27,6 +27,14 @@ public class TileMapping : MonoBehaviour {
                 StartCoroutine("move");
             }
         }
+		if (Input.GetKeyDown(KeyCode.A))
+		{
+			if (!moving)
+			{
+				index--;
+				StartCoroutine("moveback");
+			}
+		}
 	}
 
     IEnumerator move()
@@ -40,10 +48,9 @@ public class TileMapping : MonoBehaviour {
             {
                 transform.Translate(new Vector3(0.05f, 0, 0));
                 yield return new WaitForFixedUpdate();
-
             }
         }
-        else if (transform.localPosition.y <= Tiles[index].transform.position.y)
+        if (transform.localPosition.y <= Tiles[index].transform.position.y)
         {
             while (transform.localPosition.y <= Tiles[index].transform.position.y)
             {
@@ -51,7 +58,7 @@ public class TileMapping : MonoBehaviour {
                 yield return new WaitForFixedUpdate();
             }
         }
-        else if (transform.localPosition.y >= Tiles[index].transform.position.y)
+        if (transform.localPosition.y >= Tiles[index].transform.position.y)
         {
             while (transform.localPosition.y >= Tiles[index].transform.position.y)
             {
@@ -63,6 +70,42 @@ public class TileMapping : MonoBehaviour {
         anim.SetBool("Walking", false);
         yield return null;
     }
+
+	IEnumerator moveback()
+	{
+		moving = true;
+		anim.SetBool("Walking", true);
+
+		if (transform.localPosition.x >= Tiles[index].transform.position.x)
+		{
+			while (transform.localPosition.x >= Tiles[index].transform.position.x)
+			{
+				transform.Translate(new Vector3(-0.05f, 0, 0));
+				yield return new WaitForFixedUpdate();
+
+			}
+		}
+		if (transform.localPosition.y >= Tiles[index].transform.position.y)
+		{
+			while (transform.localPosition.y >= Tiles[index].transform.position.y)
+			{
+				transform.Translate(new Vector3(0, -0.05f, 0));
+				yield return new WaitForFixedUpdate();
+			}
+		}
+		if (transform.localPosition.y <= Tiles[index].transform.position.y)
+		{
+			while (transform.localPosition.y <= Tiles[index].transform.position.y)
+			{
+				transform.Translate(new Vector3(0, +0.05f, 0));
+				yield return new WaitForFixedUpdate();
+			}
+		}
+
+		moving = false;
+		anim.SetBool("Walking", false);
+		yield return null;
+	}
 
 
 }
