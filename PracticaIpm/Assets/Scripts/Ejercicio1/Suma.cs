@@ -69,7 +69,7 @@ public class Suma : MonoBehaviour {
 		sum.transform.localScale = new  Vector3 (1, 1, 1);
 
 	}
-	void ComprobarSuma(){
+	public void ComprobarSuma(){
 		int pasos = script.pasos;
 		switch (indice) {
 		case 0:
