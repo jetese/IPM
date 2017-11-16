@@ -11,9 +11,13 @@ public class TileMapping : MonoBehaviour {
     bool moving = false;
 	public int pasos;
     bool movingBack = false;
+	GameObject suma;
+	Suma script;
 
     // Use this for initialization
     void Start () {
+		suma = GameObject.Find("Ejercicio");
+		script = suma.GetComponent<Suma>();
         Tiles = (from tile in GameObject.FindGameObjectsWithTag("Tile")
                  orderby int.Parse(tile.name)
                  select tile).ToList<GameObject>();
@@ -67,6 +71,7 @@ public class TileMapping : MonoBehaviour {
 
         index++;
         pasos++;
+		script.Solucion (pasos);
         moving = true;
         anim.SetBool("Walking", true);
 
@@ -105,6 +110,7 @@ public class TileMapping : MonoBehaviour {
         {
             index--;
             pasos--;
+			script.Solucion (pasos);
             moving = true;
             movingBack = true;
             anim.SetBool("Walking", true);

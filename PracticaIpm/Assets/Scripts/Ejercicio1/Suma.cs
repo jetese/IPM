@@ -4,21 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Suma : MonoBehaviour {
     public List<AudioClip> GoodAudios;
+	public List<GameObject> numeros;
     public GameObject Erizo;
-	public GameObject cero;
-	public GameObject uno;
-	public GameObject dos;
-	public GameObject tres;
-	public GameObject cuatro;
-	public GameObject cinco;
-	public GameObject seis;
-	public GameObject siete;
-	public GameObject ocho;
-	public GameObject nueve;
 	public GameObject canvas;
 	public GameObject suma;
 	GameObject sum1;
 	GameObject sum2;
+	GameObject sol;
+	GameObject sol2;
 	GameObject elefante;
 	TileMapping script;
 	int indice;
@@ -29,9 +22,9 @@ public class Suma : MonoBehaviour {
 		Sumauno ();
 	}
 	void Sumauno(){
-		sum1 = Instantiate (dos) as GameObject;
+		sum1 = Instantiate (numeros[2]) as GameObject;
 		sum1.transform.position = new Vector3 (-7, 4, 0);
-		sum2 = Instantiate (tres) as GameObject;
+		sum2 = Instantiate (numeros[3]) as GameObject;
 		sum2.transform.position = new Vector3 (-5, 4, 0);
 		GameObject sum = Instantiate (suma) as GameObject;
 		sum.transform.position = new Vector3 (-6, 4, 0);
@@ -46,9 +39,9 @@ public class Suma : MonoBehaviour {
 	void Sumados(){
 		Destroy (sum1);
 		Destroy (sum2);
-		sum1 = Instantiate (cuatro) as GameObject;
+		sum1 = Instantiate (numeros[4]) as GameObject;
 		sum1.transform.position = new Vector3 (-7, 4, 0);
-		sum2 = Instantiate (seis) as GameObject;
+		sum2 = Instantiate (numeros[6]) as GameObject;
 		sum2.transform.position = new Vector3 (-5, 4, 0);
 		sum1.transform.parent = canvas.transform;
 		sum2.transform.parent = canvas.transform;
@@ -60,9 +53,9 @@ public class Suma : MonoBehaviour {
 	void Sumatres(){
 		Destroy (sum1);
 		Destroy (sum2);
-		sum1 = Instantiate (dos) as GameObject;
+		sum1 = Instantiate (numeros[2]) as GameObject;
 		sum1.transform.position = new Vector3 (-7, 4, 0);
-		sum2 = Instantiate (cuatro) as GameObject;
+		sum2 = Instantiate (numeros[4]) as GameObject;
 		sum2.transform.position = new Vector3 (-5, 4, 0);
 		sum1.transform.parent = canvas.transform;
 		sum2.transform.parent = canvas.transform;
@@ -113,4 +106,20 @@ public class Suma : MonoBehaviour {
 
         audioPlayer.playAudio(audioList[randomIndex]);
     }
+
+	public void Solucion(int paso){
+		Destroy (sol);
+		Destroy (sol2);
+		if (paso >= 10) {
+			sol2 = Instantiate (numeros[1]) as GameObject;
+			sol2.transform.position = new Vector3 (-7, 3, 0);
+			sol2.transform.parent = canvas.transform;
+			sol2.transform.localScale = new  Vector3 (1, 1, 1);
+			paso = paso % 10;
+		}
+		sol = Instantiate (numeros[paso]) as GameObject;
+		sol.transform.position = new Vector3 (-7, 3, 0);
+		sol	.transform.parent = canvas.transform;
+		sol.transform.localScale = new  Vector3 (1, 1, 1);
+	}
 }
