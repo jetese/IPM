@@ -14,3 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Matematicas_ej_1.unity
     guid: cfadf6f4ce2764d4dbe006076384a309
+  - enabled: 1
+    path: Assets/Scenes/Work-in-progress.unity
+    guid: b6aaeb3eca1bad44e8240ca8f60ff580
+  - enabled: 1
+    path: Assets/Scenes/Menu3.unity
+    guid: 413c854b8571fe64d933161681d6b3dd

@@ -4,29 +4,55 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuManager1 : MonoBehaviour {
-    private string prevScene;
+    public string prevScene;
     public bool isAutomatic = false;
+    public bool goBack = false;
     public string nextScene;
 
-	// Use this for initialization
-	void Start () {
-		
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
+    // Use this for initialization
+    void Start () {
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.anyKey && isAutomatic) {
-            SceneManager.LoadScene(nextScene);    
+            if(goBack)
+            {
+                goToScene(prevScene);
+            }
+            else
+            {
+                goToScene(nextScene);
+            }
         }
+    }
+
+    private void goToNextScene()
+    {
+        
+        if (nextScene == "Work-in-progress")
+        {
+            isAutomatic = true;
+            goBack = true;
+        }
+        else
+        {
+            isAutomatic = false;
+            goBack = false;
+        }
+        SceneManager.LoadScene(nextScene);
     }
 
     public void goToScene(string scene)
     {
-        SceneManager.LoadScene(scene);
-    }
-
-    public void goBackScene()
-    {
-        SceneManager.LoadScene(prevScene);
+        prevScene = nextScene;
+        nextScene = scene;
+        goToNextScene();
     }
 }
