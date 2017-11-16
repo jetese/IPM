@@ -28,4 +28,10 @@ public class MenuAsignaturas : MonoBehaviour {
         audio.clip = audioC;
         audio.Play();
     }
+
+    public bool checkPlaying()
+    {
+        bool playing = audio.isPlaying;
+        return playing;
+    }
 }

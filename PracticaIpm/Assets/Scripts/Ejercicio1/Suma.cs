@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Suma : MonoBehaviour {
     public List<AudioClip> GoodAudios;
+    public List<AudioClip> BadAudios;
+    public AudioClip Instruction;
+    public GameObject particleSystem;
     public GameObject Erizo;
 	public GameObject cero;
 	public GameObject uno;
@@ -26,7 +29,9 @@ public class Suma : MonoBehaviour {
 	void Start () {
 		elefante = GameObject.Find("ElefantePadre");
 		script = elefante.GetComponent<TileMapping>();
-		Sumauno ();
+        MenuAsignaturas audioPlayer = Erizo.GetComponent<MenuAsignaturas>();
+        audioPlayer.playAudio(Instruction);
+        Sumauno ();
 	}
 	void Sumauno(){
 		sum1 = Instantiate (dos) as GameObject;
@@ -76,21 +81,25 @@ public class Suma : MonoBehaviour {
 		case 0:
 			if (pasos == 5) {
                 playAudioFromList(GoodAudios);
+               generateStars();
 				Sumados ();
 				script.pasos = 0;
 			} else {
 				script.Reintentar ();
+                playAudioFromList(BadAudios);
 			}
 			break;
 		case 1:
 			if (pasos == 10)
                 {
                 playAudioFromList(GoodAudios);
+                generateStars();
                 Sumatres ();
 				script.pasos = 0;
 			} else {
 				script.Reintentar ();
-			}
+                playAudioFromList(BadAudios);
+                }
 			break;
 		case 2:
 			if (pasos == 6) {
@@ -98,7 +107,8 @@ public class Suma : MonoBehaviour {
 				script.pasos = 0;
 			} else {
 				script.Reintentar ();
-			}
+                playAudioFromList(BadAudios);
+                }
 			break;
 		}
 	}
@@ -114,5 +124,23 @@ public class Suma : MonoBehaviour {
         int randomIndex = rnd.Next(audioList.Count);
 
         audioPlayer.playAudio(audioList[randomIndex]);
+    }
+
+    void generateStars()
+    {
+        StartCoroutine("destroyObject", Instantiate(particleSystem));
+    }
+
+    IEnumerator destroyObject(GameObject obj)
+    {
+        yield return new WaitForSeconds(2.0f);
+        Destroy(obj);
+        yield return null;
+    }
+
+    IEnumerator RandomPhrase()
+    {
+        yield return new WaitForSeconds(10.0f);
+        yield return null;
     }
 }
