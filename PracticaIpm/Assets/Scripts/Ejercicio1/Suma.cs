@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Suma : MonoBehaviour {
 	public GameObject cero;
 	public GameObject uno;
@@ -89,7 +89,7 @@ public class Suma : MonoBehaviour {
 			break;
 		case 2:
 			if (pasos == 6) {
-				//Llamar a acabar
+				SceneManager.LoadScene(5);
 				script.pasos = 0;
 			} else {
 				script.Reintentar ();
