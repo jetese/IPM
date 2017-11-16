@@ -76,8 +76,10 @@ public class Suma : MonoBehaviour {
 			}
 			break;
 		case 1:
-			if (pasos == 10) {
-				Sumatres ();
+			if (pasos == 10)
+                {
+                playAudioFromList(GoodAudios);
+                Sumatres ();
 				script.pasos = 0;
 			} else {
 				script.Reintentar ();
