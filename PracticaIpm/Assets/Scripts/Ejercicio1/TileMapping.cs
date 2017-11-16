@@ -42,8 +42,9 @@ public class TileMapping : MonoBehaviour {
 		}
 	}
 
+
 	public void Avanzar(){
-		if (!moving)
+		if (!moving && index<Tiles.Count-1)
 		{
 			index++;
 			pasos++;
@@ -52,7 +53,7 @@ public class TileMapping : MonoBehaviour {
 	}
 
 	public void Retroceder(){
-		if (!moving) {
+		if (!moving && index>0) {
 			index--;
 			pasos--;
 			StartCoroutine ("moveback");
