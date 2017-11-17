@@ -26,7 +26,7 @@ public class MenuManager2 : MonoBehaviour {
 
     IEnumerator moveAges()
     {
-        while(Ages.transform.localPosition.x > -310)
+        while(Ages.transform.localPosition.x > -171)
         {
             Ages.transform.Translate(new Vector3(-10, 0, 0));
             yield return new WaitForFixedUpdate();
