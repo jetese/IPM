@@ -1176,6 +1176,7 @@ MonoBehaviour:
   Erizo: {fileID: 162328250}
   canvas: {fileID: 425179240}
   suma: {fileID: 1187204347328324, guid: de12ac1fef2ac774cbc6059f6b1b0ad3, type: 2}
+  barra: {fileID: 1474386635581868, guid: 6bc89f16df52a144da26118462c3926c, type: 2}
 --- !u!4 &867038635
 Transform:
   m_ObjectHideFlags: 0
