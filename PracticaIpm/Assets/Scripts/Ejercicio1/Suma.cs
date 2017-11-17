@@ -32,15 +32,15 @@ public class Suma : MonoBehaviour {
 	}
 	void Sumauno(){
 		bar = Instantiate (barra) as GameObject;
-		bar.transform.position = new Vector3 (-7, 2.5f, 0);
+		bar.transform.position = new Vector3 (-6, 2.5f, 0);
 		bar.transform.parent = canvas.transform;
 		bar.transform.localScale = new  Vector3 (2.5f, 0.25f, 1);
 		sum1 = Instantiate (numeros[2]) as GameObject;
-		sum1.transform.position = new Vector3 (-8.5f, 3.5f, 0);
+		sum1.transform.position = new Vector3 (-7.5f, 3.5f, 0);
 		sum2 = Instantiate (numeros[3]) as GameObject;
-		sum2.transform.position = new Vector3 (-5.5f, 3.5f, 0);
+		sum2.transform.position = new Vector3 (-4.5f, 3.5f, 0);
 		GameObject sum = Instantiate (suma) as GameObject;
-		sum.transform.position = new Vector3 (-7f, 3.5f, 0);
+		sum.transform.position = new Vector3 (-6f, 3.5f, 0);
 		sum1.transform.parent = canvas.transform;
 		sum2.transform.parent = canvas.transform;
 		sum.transform.parent = canvas.transform;
@@ -53,9 +53,9 @@ public class Suma : MonoBehaviour {
 		Destroy (sum1);
 		Destroy (sum2);
 		sum1 = Instantiate (numeros[4]) as GameObject;
-		sum1.transform.position = new Vector3 (-8.5f, 3.5f, 0);
+		sum1.transform.position = new Vector3 (-7.5f, 3.5f, 0);
 		sum2 = Instantiate (numeros[6]) as GameObject;
-		sum2.transform.position = new Vector3 (-5.5f, 3.5f, 0);
+		sum2.transform.position = new Vector3 (-4.5f, 3.5f, 0);
 		sum1.transform.parent = canvas.transform;
 		sum2.transform.parent = canvas.transform;
 		sum1.transform.localScale = new  Vector3 (1, 1, 1);
@@ -67,9 +67,9 @@ public class Suma : MonoBehaviour {
 		Destroy (sum1);
 		Destroy (sum2);
 		sum1 = Instantiate (numeros[2]) as GameObject;
-		sum1.transform.position = new Vector3 (-8.5f, 3.5f, 0);
+		sum1.transform.position = new Vector3 (-7.5f, 3.5f, 0);
 		sum2 = Instantiate (numeros[4]) as GameObject;
-		sum2.transform.position = new Vector3 (-5.5f, 3.5f, 0);
+		sum2.transform.position = new Vector3 (-4.5f, 3.5f, 0);
 		sum1.transform.parent = canvas.transform;
 		sum2.transform.parent = canvas.transform;
 		sum1.transform.localScale = new  Vector3 (1, 1, 1);
@@ -162,17 +162,17 @@ public class Suma : MonoBehaviour {
 		Destroy (sol2);
 		if (paso >= 10) {
 			sol2 = Instantiate (numeros [1]) as GameObject;
-			sol2.transform.position = new Vector3 (-7.75f, 1.5f, 0);
+			sol2.transform.position = new Vector3 (-6.75f, 1.5f, 0);
 			sol2.transform.parent = canvas.transform;
 			sol2.transform.localScale = new  Vector3 (1, 1, 1);
 			paso = paso % 10;
 			sol = Instantiate (numeros [paso]) as GameObject;
-			sol.transform.position = new Vector3 (-6.25f, 1.5f, 0);
+			sol.transform.position = new Vector3 (-5.25f, 1.5f, 0);
 			sol.transform.parent = canvas.transform;
 			sol.transform.localScale = new  Vector3 (1, 1, 1);
 		} else {
 			sol = Instantiate (numeros[paso]) as GameObject;
-			sol.transform.position = new Vector3 (-7f, 1.5f, 0);
+			sol.transform.position = new Vector3 (-6f, 1.5f, 0);
 			sol	.transform.parent = canvas.transform;
 			sol.transform.localScale = new  Vector3 (1, 1, 1);
 		}
