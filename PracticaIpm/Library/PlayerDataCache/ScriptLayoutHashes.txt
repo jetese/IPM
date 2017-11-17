@@ -115,6 +115,8 @@ eced8c8958fc8778d1b8604e9122d164 Assembly-CSharp.dll:Anima2D.IkLimb2D
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TileScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MenuOso
 bb21ecf26db1f02f72231857956971b6 Assembly-CSharp.dll:Anima2D.SpriteMesh
+05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
+05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CharacterMotion
 542530e11789dc403468901628b3f4a8 Assembly-CSharp.dll:Anima2D.Bone2D
 68a6470d9b146708efff0ffee7d49c66 Assembly-CSharp.dll:.SpriteCycle
