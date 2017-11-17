@@ -34,4 +34,16 @@ public class MenuAsignaturas : MonoBehaviour {
         bool playing = audio.isPlaying;
         return playing;
     }
+
+    public void PlayAndQuit(AudioClip audioC)
+    {
+        playAudio(audioC);
+        StartCoroutine("Quit");
+    }
+
+    IEnumerator Quit()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Application.Quit();
+    }
 }

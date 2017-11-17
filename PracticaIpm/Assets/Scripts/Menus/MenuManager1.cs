@@ -63,10 +63,9 @@ public class MenuManager1 : MonoBehaviour {
         GameObject ardilla = GameObject.FindGameObjectWithTag("Ardilla");
         System.Random rnd = new System.Random();
         int randomIndex = rnd.Next(CloseGameAudio.Count);
-        ardilla.GetComponent<MenuAsignaturas>().playAudio(CloseGameAudio[randomIndex]);
-        Application.Quit();
+        ardilla.GetComponent<MenuAsignaturas>().PlayAndQuit(CloseGameAudio[randomIndex]);
     }
-
+    
     public void goBackToMenu(AudioClip audio)
     {
         GameObject ardilla = GameObject.FindGameObjectWithTag("Ardilla");       

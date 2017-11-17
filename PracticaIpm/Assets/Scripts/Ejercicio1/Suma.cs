@@ -144,7 +144,7 @@ public class Suma : MonoBehaviour {
 
     IEnumerator RandomPhrase()
     {
-        yield return new WaitForSeconds(10.0f);
+        yield return new WaitForSeconds(20.0f);
         MenuAsignaturas audioPlayer = Erizo.GetComponent<MenuAsignaturas>();
         System.Random rnd = new System.Random();
         int randomIndex = rnd.Next(Hints.Count);
