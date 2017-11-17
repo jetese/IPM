@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Suma : MonoBehaviour {
     public List<AudioClip> GoodAudios;
     public List<AudioClip> BadAudios;
+    public List<AudioClip> Hints;
 	public List<GameObject> numeros;
     public AudioClip Instruction;
     public GameObject particleSystem;
@@ -26,6 +27,7 @@ public class Suma : MonoBehaviour {
 		script = elefante.GetComponent<TileMapping>();
         MenuAsignaturas audioPlayer = Erizo.GetComponent<MenuAsignaturas>();
         audioPlayer.playAudio(Instruction);
+        StartCoroutine("RandomPhrase");
         Sumauno ();
 	}
 	void Sumauno(){
@@ -143,6 +145,15 @@ public class Suma : MonoBehaviour {
     IEnumerator RandomPhrase()
     {
         yield return new WaitForSeconds(10.0f);
+        MenuAsignaturas audioPlayer = Erizo.GetComponent<MenuAsignaturas>();
+        System.Random rnd = new System.Random();
+        int randomIndex = rnd.Next(Hints.Count);
+        if (!audioPlayer.checkPlaying())
+        {
+            audioPlayer.playAudio(Hints[randomIndex]);
+            print("Audio");
+        }
+        StartCoroutine("RandomPhrase");
         yield return null;
     }
 
